@@ -48,4 +48,16 @@ class StudentTest < ActiveSupport::TestCase
     end
   end
 
+  test "should save student with no minor attributes" do
+    student = Student.create(first_name: "Bob", last_name: "Miller", school_email: "mbob@msudenver.edu", major: "CS", graduation_date: Date.parse("2024-09-28"))
+    assert student.persisted?, "Student was not persisted"
+  end
+  
+
+  test "should save student with valid attributes" do
+    student = Student.create!(first_name: "Bob", last_name: "Miller", school_email: "mbob@msudenver.edu", major: "CS", minor: "Maths", graduation_date: Date.parse("2024-09-29"))
+    assert student.persisted?, "Student was not persisted"
+  end
+ 
+
 end
