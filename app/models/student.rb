@@ -3,7 +3,9 @@ class Student < ApplicationRecord
 
     
     validates :school_email, uniqueness: true   #Email has to be unique.
-
+    validates :school_email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "is not a valid email." }
     validates :school_email, format: { with: /\A[\w+\-.]+@msudenver\.edu\z/i, message: "address is not a valid 'username@msudenver.edu' email." }
+
+    has_one_attached :profile_picture
 
 end
