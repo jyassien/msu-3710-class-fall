@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  school_email: MyString
-  major: MyString
-  minor: MyString
+  first_name: Bob
+  last_name: Miller
+  school_email: school@msudenver.edu
+  major: CS
+  minor: Maths
   graduation_date: 2024-09-25
 
 two:
-  first_name: MyString
-  last_name: MyString
-  school_email: MyString
-  major: MyString
-  minor: MyString
+  first_name: test
+  last_name: lastTest
+  school_email: email@msudenver.edu
+  major: Language
+  minor: minor
   graduation_date: 2024-09-25
