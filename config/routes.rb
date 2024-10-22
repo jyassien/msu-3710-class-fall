@@ -9,3 +9,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
+
+# bundle exec rspec spec/requests/students_spec.rb
