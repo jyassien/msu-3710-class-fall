@@ -14,8 +14,37 @@
  </head>
 
  <body>
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <div class="container" style="maxWidth: 98% !important; ">
+   <a class="navbar-brand" href="#">
+     <img src="<%= asset_path('msulogo.png') %>" alt="Logo" style="width: 100px; height: 40px;">
+     MSU Denver
+   </a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ml-auto">
+       <li class="nav-item" style="margin:0 40px">
+       
+       <a href="#"  style="text-decoration: none; color: inherit;">
+       Home
+      </a>
+       </li>
+       <li class="nav-item">
+       <a href="#" style="text-decoration: none; color: inherit;">
+       Account
+      </a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+
+
    <!-- Test bootstrap button to see if it works then remove-->
-   <button type="button" class="btn btn-warning">Warning</button>
+   <!--  <button type="button" class="btn btn-warning">Warning</button> -->
    <%= yield %>
  </body>
 </html>

@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+.container {
+  width: 100%;
+}
+.table-gradient {
+  background: linear-gradient(to right, #007bff, #6610f2);
+  color: white;
+}
+
+.table-gradient:nth-child(even) {
+  background: linear-gradient(to right, #6610f2, #007bff);
+}

@@ -1,0 +1,30 @@
+<%= form_with(model: student, url: students_path, method: :get, local: true) do |form| %>
+  <% if flash[:alert] %>
+    <div style="color: red">
+      <h2><%= flash[:alert] %></h2>
+    </div>
+  <% end %>
+  
+
+  <div class="ms-2">
+    <%= form.label :major, "Select Major", style: "display: block" %>
+    <%= form.select :major, options_for_select(Student::VALID_MAJORS), { prompt: "Select Major" }, class: "form-control" %>
+  </div>
+
+  <div class="ms-2">
+    <%= form.label :graduation_date_option, "Graduation Date Search", style: "display: block" %>
+    <%= form.select :graduation_date_option, options_for_select([['Before', 'before'], ['After', 'after']]), { prompt: "Select Option" }, class: "form-control" %>
+  </div>
+
+  <div class="ms-2">
+    <%= form.label :graduation_date, "Date", style: "display: block" %>
+    <%= form.date_field :graduation_date %>
+  </div>
+
+  <p class="ms-2">Please enter search criteria to find students.</p>
+
+  <div class="mb-3 ms-3 ">
+    <%= form.submit "Search", class: "btn btn-primary px-5 w-10" %>
+  </div>
+
+<% end %>

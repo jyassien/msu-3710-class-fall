@@ -1,17 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Students</h1>
-<!-- This comment comment line is visible on the client side. -->
-<%# This is an ERB comment and will not appear in the HTML output %>
+
+<h1>Search for Students</h1>
+
+<!-- Display the Search form -->
+<%= render 'search', student: Student.new %>
 
 
-<div id="students">
-  <% @students.each do |student| %>
-    <%= render student %>
-    <p>
-      <%= link_to "Show this student", student %>
-    </p>
-  <% end %>
-</div>
+<%= link_to "Show All", students_path(show_all: true), class: "btn btn-secondary mb-3 ms-3 px-5" %>
 
-<%= link_to "New student", new_student_path %>
+
+<% if @students.any? %>
+   <h4>Search Results: Total <%= @students.count %> Students</h4>
+  <%= render partial: 'results', locals: { students: @students } %>
+<% elsif @students.count == 0 %>
+    <p>No students found.</p>
+  
+<% end %>
